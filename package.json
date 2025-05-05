@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@tailwindcss/vite": "^4.1.5",
+    "antd": "^5.24.9",
+    "lodash.shuffle": "^4.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.1.5"
+    "react-flip-toolkit": "^7.2.4",
+    "styled-components": "^6.1.17",
+    "tailwindcss": "^4.1.5",
+    "use-local-storage-state": "^19.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
