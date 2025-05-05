@@ -68,8 +68,7 @@ export default function CustomImg({ onChange }) {
             customRequest={(content) => {
               const { file } = content;
               fileToBase64(file).then((base64) => {
-                // content.onSuccess(base64);
-                content.onError(base64);
+                content.onSuccess(base64);
               }).catch((error) => {
                 content.onError(error);
               });
