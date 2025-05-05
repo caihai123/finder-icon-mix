@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generator: Apple Native CoreSVG 326-->
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 752.25 590.75">
+ <g>
+  <rect height="590.75" opacity="0" width="752.25" x="0" y="0"/>
+  <path d="M140.5 411.5L611.75 411.5C654.75 411.5 678.75 387.75 678.75 345.25L678.75 245C678.75 202.75 654.75 179 611.75 179L140.5 179C97.5 179 73.5 202.75 73.5 245L73.5 345.25C73.5 387.75 97.5 411.5 140.5 411.5Z" fill="black" fill-opacity="0.85"/>
+  <path d="M19.25 40.75L732.75 40.75C743.75 40.75 752.25 31.25 752.25 20.5C752.25 9.5 743.75 0 732.75 0L19.25 0C8.5 0 0 9.5 0 20.5C0 31.25 8.5 40.75 19.25 40.75ZM19.25 549.5C8.5 549.5 0 559 0 570C0 580.75 8.5 590.25 19.25 590.25L732.75 590.25C743.75 590.25 752.25 580.75 752.25 570C752.25 559 743.75 549.5 732.75 549.5Z" fill="black" fill-opacity="0.85"/>
+ </g>
+</svg>

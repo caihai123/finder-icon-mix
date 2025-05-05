@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generator: Apple Native CoreSVG 326-->
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 651.25 650.25">
+ <g>
+  <rect height="650.25" opacity="0" width="651.25" x="0" y="0"/>
+  <path d="M651.25 325C651.25 276.25 639.75 230.25 619.5 189L619.5 461.25C639.75 419.75 651.25 373.5 651.25 325Z" fill="black" fill-opacity="0.85"/>
+  <path d="M550.75 558.5C562 547.75 572.75 536.25 582.25 523.75L582.25 126.25C572.75 114 562 102 550.75 91.25Z" fill="black" fill-opacity="0.85"/>
+  <path d="M481.75 609.75C492.75 603.75 503.25 597 513.5 589.75L513.5 60C503.25 52.75 492.75 46 481.75 40.25Z" fill="black" fill-opacity="0.85"/>
+  <path d="M413 638.25C423.75 635.25 434.5 631.5 444.5 627.5L444.5 22.5C434.5 18.25 423.75 14.75 413 11.75Z" fill="black" fill-opacity="0.85"/>
+  <path d="M344 649.75C354.75 649.25 365.25 648.25 375.75 646.5L375.75 3.5C365.25 1.75 354.75 0.5 344 0Z" fill="black" fill-opacity="0.85"/>
+  <path d="M275.5 646.5C286 648.25 296.5 649.25 307.25 649.75L307.25 0C296.5 0.5 286 1.75 275.5 3.25Z" fill="black" fill-opacity="0.85"/>
+  <path d="M206.5 627.5C216.75 631.5 227.5 635.25 238.25 638.25L238.25 11.5C227.5 14.5 216.75 18.25 206.5 22.25Z" fill="black" fill-opacity="0.85"/>
+  <path d="M137.75 589.75C148 597 158.25 603.75 169.5 609.75L169.5 40C158.25 45.75 148 52.5 137.75 59.75Z" fill="black" fill-opacity="0.85"/>
+  <path d="M68.75 523.75C78.5 536.25 89 547.75 100.5 558.5L100.5 91C89 101.75 78.5 113.75 68.75 126Z" fill="black" fill-opacity="0.85"/>
+  <path d="M0 325C0 373.5 11.25 419.75 31.75 461.25L31.75 188.75C11.25 230 0 276.25 0 325Z" fill="black" fill-opacity="0.85"/>
+ </g>
+</svg>
