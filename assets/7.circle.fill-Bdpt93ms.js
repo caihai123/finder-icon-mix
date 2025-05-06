@@ -1,0 +1,12 @@
+const n=`<?xml version="1.0" encoding="UTF-8"?>
+<!--Generator: Apple Native CoreSVG 326-->
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 651.25 651.75">
+ <g>
+  <rect height="651.75" opacity="0" width="651.25" x="0" y="0"/>
+  <path d="M651.25 325.75C651.25 505 505 651.25 325.5 651.25C146.25 651.25 0 505 0 325.75C0 146.25 146.25 0 325.5 0C505 0 651.25 146.25 651.25 325.75ZM241.75 176.5C231.5 176.5 224.5 184 224.5 194.75C224.5 205 231.75 212.5 241.75 212.5L386 212.5L386 215L262.5 445C259.75 450.25 258.5 454.25 258.5 460C258.5 472.25 268.5 480.75 281.25 480.75C291.25 480.75 298 476.25 303.75 465L428.5 227.5C434.25 216.75 435.5 211 435.5 204.5C435.5 188.5 422.75 176.5 403.75 176.5Z" fill="black" fill-opacity="0.85"/>
+ </g>
+</svg>
+`;export{n as default};
