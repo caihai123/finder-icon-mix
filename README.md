@@ -1,12 +1,35 @@
-# React + Vite
+# 🗂️ FinderIconMix 是什么？
+FinderIconMix 是一个专为 macOS 用户打造的小工具，让你可以自由定制文件夹图标，就像系统默认的「应用」「文稿」「下载」文件夹一样好看，甚至更炫。
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+它的目标是：让你给每一个Finder文件夹都贴上独一无二的标识，提升效率与美感。
 
-Currently, two official plugins are available:
+# ❓ 为什么需要 FinderIconMix？
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+在 macOS中，用户无法直接为普通文件夹设置图标，只能通过“显示简介”方式替换整个文件夹图标。但问题是：
 
-## Expanding the ESLint configuration
+- 没有现成的文件夹图标可以用，特别是带图标的系统风格样式；
+- 系统默认图标风格好看，却没有官方工具能生成同风格图标。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+FinderIconMix 的作用就是解决这个痛点：
+- 提供与 mac 默认风格一致的图标叠加效果；
+- 支持 全部常见的 Apple图标类别（通信、天气、地图、设备等），几乎涵盖你想要的所有图标；
+- 还内置了大量常用 Logo（如 Chrome、Safari、社交应用等）；
+- 所有生成图标均为 PNG，可拖拽用于任何文件夹，无需安装软件，离线可用。
+
+# 🛠️ 怎么用？
+1. 上传你要叠加的图标，或选择下方提供的 Logo 和 Apple 图标。
+2. 拖动滑块调整 位置 / 大小 / 颜色。
+3. 点击「保存」导出 PNG 文件。
+4. 将导出的图标设为你文件夹的图标（如下👇）：
+
+# 📌 如何更换文件夹图标？
+1. 将图标拷贝到剪贴板。
+2. 打开 Finder，选中你要更换的文件夹。
+3. 右键 →「显示简介」。
+4. 点击左上角的小图标选择粘贴。
+
+还是不会？[点击这里查看官方教程](https://support.apple.com/zh-cn/guide/mac-help/mchlp2313/mac)
+
+# ❤️ 如果这个工具对你有帮助，欢迎请作者喝一杯 ☕️
+<img src="./public/static/reward/wechat.JPG" height="240px"/>
+<img src="./public/static/reward/alipay.JPG" height="240px"/>
