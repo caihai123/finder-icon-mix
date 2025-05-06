@@ -81,12 +81,12 @@ export default function About() {
         <Title level={2}>❤️ 如果这个工具对你有帮助，欢迎请作者喝一杯 ☕️</Title>
         <div className="flex mt-2">
           <img
-            src="/static/reward/wechat.JPG"
+            src={`${import.meta.env.BASE_URL}static/reward/wechat.JPG`}
             alt="微信打赏"
             className="w-32 h-auto mx-2 rounded shadow"
           />
           <img
-            src="/static/reward/alipay.JPG"
+            src={`${import.meta.env.BASE_URL}static/reward/alipay.JPG`}
             alt="支付宝打赏"
             className="w-32 h-auto mx-2 rounded shadow"
           />
