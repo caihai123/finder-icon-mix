@@ -59,7 +59,7 @@ const App = () => {
 
   const [activeIcon, setActiveIcon] = React.useState(null);
 
-  const [x, setX] = React.useState(240); // 240 似乎是 Finder 的默认位置
+  const [x, setX] = React.useState((canvasWidth - defaultIconSize) / 2); // 居中
   const [y, setY] = React.useState(268); // 268 似乎是 Finder 的默认位置
   const [size, setSize] = React.useState(defaultIconSize);
   const [color, setColor] = React.useState(defaultIconColor);
