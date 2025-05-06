@@ -31,5 +31,4 @@ FinderIconMix 的作用就是解决这个痛点：
 还是不会？[点击这里查看官方教程](https://support.apple.com/zh-cn/guide/mac-help/mchlp2313/mac)
 
 # ❤️ 如果这个工具对你有帮助，欢迎请作者喝一杯 ☕️
-<img src="./public/static/reward/wechat.JPG" height="240px"/>
-<img src="./public/static/reward/alipay.JPG" height="240px"/>
+<img src="./public/static/reward/wechat.JPG" height="240px"/><img src="./public/static/reward/alipay.JPG" height="240px"/>
