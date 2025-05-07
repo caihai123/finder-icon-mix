@@ -8,9 +8,10 @@ import {
   ColorPicker,
   Splitter,
   Typography,
+  Tooltip,
   theme,
 } from "antd";
-import { QuestionCircleOutlined } from "@ant-design/icons";
+import { QuestionCircleFilled, GithubOutlined } from "@ant-design/icons";
 import finderFolderIcon from "/src/assets/finder-folder-icon.png";
 import IconSelect from "/src/components/IconSelect";
 import LogoSelect from "/src/components/LogoSelect";
@@ -208,18 +209,31 @@ export default function Home() {
   return (
     <Layout className="h-screen">
       <Layout.Header
-        style={{ paddingInline: "1rem", background: colorBgContainer }}
+        style={{
+          paddingInline: "1rem",
+          background: colorBgContainer,
+        }}
         className="flex items-center justify-between border-b border-gray-200"
       >
-        <Title style={{ margin: 0 }}>FinderIconMix</Title>
+        <Title style={{ margin: 0, fontSize: 24 }}>Finder Icon Mix</Title>
 
-        <div className="flex items-center">
-          <Button
-            type="text"
-            icon={<QuestionCircleOutlined />}
-            onClick={() => navigate("/about")}
-          ></Button>
-          {/* <Button type="text">捐赠 💰</Button> */}
+        <div className="flex items-center gap-2">
+          <Tooltip title={"关于我"} mouseEnterDelay={1}>
+            <Button
+              type="text"
+              icon={<QuestionCircleFilled />}
+              onClick={() => navigate("/about")}
+              style={{ fontSize: 20 }}
+            ></Button>
+          </Tooltip>
+          <Tooltip title={"GitHub"} mouseEnterDelay={1}>
+            <Button
+              type="text"
+              icon={<GithubOutlined />}
+              style={{ fontSize: 20 }}
+              onClick={() => window.open('//github.com/caihai123/finder-icon-mix/')}
+            ></Button>
+          </Tooltip>
         </div>
       </Layout.Header>
       <Layout className="flex-1 overflow-y-auto">
