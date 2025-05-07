@@ -11,10 +11,11 @@ import {
   theme,
 } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
-import FinderFolderIcon from "/src/assets/finder-folder-icon.png";
+import finderFolderIcon from "/src/assets/finder-folder-icon.png";
 import IconSelect from "/src/components/IconSelect";
 import LogoSelect from "/src/components/LogoSelect";
 import CustomImg from "/src/components/CustomImg";
+import { hexToRgb, rgbToHsl, hslToRgb } from "/src/utils/color-transform";
 
 const { Title } = Typography;
 
@@ -53,12 +54,24 @@ const canvasHeight = 1024;
 const defaultIconSize = 544; // 544 似乎是 Finder 的默认大小
 const defaultIconColor = "#3EABE5"; // 这是 Finder 的默认颜色
 
+const defaultFolderColorList = [
+  "null",
+  "#FF675D",
+  "#FFD654",
+  "#65D76C",
+  "#4B96FF",
+  "#BF76E5",
+  "#A5A4A7",
+];
+
 export default function Home() {
   const {
-    token: { colorBgContainer, colorTextSecondary },
+    token: { colorBgContainer, colorTextSecondary, borderRadius, colorBorder },
   } = theme.useToken();
   const canvasRef = useRef(null);
   const navigate = useNavigate();
+
+  const [folderColor, setFolderColor] = React.useState(null);
 
   const [activeIcon, setActiveIcon] = React.useState(null);
 
@@ -76,16 +89,48 @@ export default function Home() {
     if (!ctx) return;
 
     const image = new Image();
-    image.src = FinderFolderIcon;
+    image.src = finderFolderIcon;
 
     image.onload = async () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // 清空整个画布
+      if (folderColor) {
+        // 创建一个虚拟 canvas 用于计算颜色
+        const virtualCanvas = document.createElement("canvas");
+        const virtualCtx = virtualCanvas.getContext("2d");
+        if (!virtualCtx) return;
+        virtualCanvas.width = canvasWidth;
+        virtualCanvas.height = canvasHeight;
+        virtualCtx.drawImage(image, 0, 0, canvasWidth, canvasHeight);
+        const imageData = virtualCtx.getImageData(
+          0,
+          0,
+          canvasWidth,
+          canvasHeight
+        );
+        const data = imageData.data;
+
+        // 以下变换来自chatgpt 某些颜色可能与预期不符 我也不知道咋整
+        const [targetHue, targetSat] = rgbToHsl(...hexToRgb(folderColor));
+        for (let i = 0; i < data.length; i += 4) {
+          const alpha = data[i + 3];
+          if (alpha < 10) continue;
+
+          const [_, __, light] = rgbToHsl(data[i], data[i + 1], data[i + 2]);
+          const [r, g, b] = hslToRgb(targetHue, targetSat, light);
+
+          data[i] = r;
+          data[i + 1] = g;
+          data[i + 2] = b;
+        }
+        ctx.putImageData(imageData, 0, 0);
+      } else {
+        ctx.drawImage(image, 0, 0, canvasWidth, canvasHeight);
+      }
       // 缓存背景图为位图，性能更高
       const background = await createImageBitmap(canvas);
       setBackgroundCache(background);
     };
-  }, []);
+  }, [folderColor]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -124,6 +169,32 @@ export default function Home() {
       };
     }
   }, [x, y, size, color, activeIcon, backgroundCache]);
+
+  // const updateFounderColor = function (hexColor) {
+  //   const canvas = canvasRef.current;
+  //   if (!canvas) return;
+  //   const ctx = canvas.getContext("2d");
+  //   if (!ctx) return;
+
+  //   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  //   const data = imageData.data;
+
+  //   const [targetHue] = rgbToHsl(...hexToRgb(hexColor));
+
+  //   for (let i = 0; i < data.length; i += 4) {
+  //     const alpha = data[i + 3];
+  //     if (alpha < 10) continue; // 忽略透明像素
+
+  //     const [, s, l] = rgbToHsl(data[i], data[i + 1], data[i + 2]);
+  //     const [r, g, b] = hslToRgb(targetHue, s, l);
+
+  //     data[i] = r;
+  //     data[i + 1] = g;
+  //     data[i + 2] = b;
+  //   }
+
+  //   ctx.putImageData(imageData, 0, 0);
+  // };
 
   // 下载图片
   const handleDownload = () => {
@@ -218,6 +289,32 @@ export default function Home() {
                 />
 
                 <div className="mt-2">
+                  <div className="grid grid-cols-4 gap-2 ">
+                    {defaultFolderColorList.map((color) => (
+                      <div
+                        key={color}
+                        style={{
+                          border: `1px solid ${colorBorder}`,
+                          borderRadius,
+                          background: color,
+                        }}
+                        className="w-full h-[32px]"
+                        onClick={() =>
+                          setFolderColor(color === "null" ? null : color)
+                        }
+                      ></div>
+                    ))}
+                    <ColorPicker
+                      value={folderColor}
+                      format="hex"
+                      disabledAlpha
+                      disabledFormat
+                      onChange={(val) => setFolderColor(`#${val.toHex()}`)}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-2">
                   <div className="flex justify-center items-center gap-2">
                     <div className="w-[40px]">X:</div>
                     <Slider
@@ -271,7 +368,10 @@ export default function Home() {
                     <div className="flex-1">
                       <ColorPicker
                         value={color}
-                        onChange={(value) => setColor(value)}
+                        onChange={(value) => setColor(`#${value.toHex()}`)}
+                        format="hex"
+                        disabledAlpha
+                        disabledFormat
                       />
                     </div>
                     <Button
