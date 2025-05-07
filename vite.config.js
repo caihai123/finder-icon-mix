@@ -6,4 +6,16 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   base: "/finder-icon-mix/",
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(file) {
+          // 将apple图标合并到一个chunk中
+          if (file.includes("src/assets/mac-icon/")) {
+            return "mac-icon";
+          }
+        },
+      },
+    },
+  },
 });
