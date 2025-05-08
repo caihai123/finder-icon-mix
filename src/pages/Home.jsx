@@ -231,7 +231,9 @@ export default function Home() {
               type="text"
               icon={<GithubOutlined />}
               style={{ fontSize: 20 }}
-              onClick={() => window.open('//github.com/caihai123/finder-icon-mix/')}
+              onClick={() =>
+                window.open("//github.com/caihai123/finder-icon-mix/")
+              }
             ></Button>
           </Tooltip>
         </div>
